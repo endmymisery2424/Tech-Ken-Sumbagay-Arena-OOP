@@ -14,6 +14,8 @@ public class MainLoop {
         this.matchManager = new MatchManager();
     }
 
+
+    // TODO : E IMPROVE ANG MENU // SKELETAL LNG NI FOR NOW
     public void start() {
         boolean running = true;
         while (running) {
@@ -45,7 +47,7 @@ public class MainLoop {
         BaseCharacter player1 = selectCharacter();
 
         if (player1 == null) {
-            System.out.println("Selection canceled or invalid. Returning to main menu.");
+            System.out.println("Gi implement pa ni lol. Returning to main menu.");
             return;
         }
 
