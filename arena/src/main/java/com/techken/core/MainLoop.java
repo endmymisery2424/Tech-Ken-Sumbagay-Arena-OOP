@@ -1,6 +1,9 @@
 package com.techken.core;
 
 import com.techken.model.BaseCharacter;
+import com.techken.model.fighters.DevilJin;
+import com.techken.model.fighters.HeihachiMisihima;
+import com.techken.model.fighters.JohnnyCage;
 import com.techken.utils.AnsiColors;
 
 import java.util.Scanner;
@@ -121,12 +124,13 @@ private BaseCharacter selectCharacter() {
 
     // TODO: Diri e instantiate ang specific classes from Member 3 & 4 (Character classes) here
     switch (choice) {
-        case "1": return null; // return new HeihachiMishima();
-        case "2": return null; // return new DevilJin();
-        case "3": return null; // return new JohnnyCage();
-        case "4": return null; // return new Reptile();
-        case "5": return null; // return new Scorpion();
-        case "6": return null; // return new LiuKang();
+        case "1": return new HeihachiMisihima();
+        case "2": return new DevilJin();
+        case "3": return new JohnnyCage();
+        // Fighter classes for 4, 5, and 6 were not provided.
+        case "4":
+        case "5":
+        case "6":
         default:
             System.out.println();
             System.out.println(AnsiColors.RED_BRIGHT + "             !! Invalid selection. Please choose 1-6. !!" + AnsiColors.RESET);
@@ -137,23 +141,18 @@ private BaseCharacter selectCharacter() {
 
     private BaseCharacter selectCpuCharacter() {
         Random random = new Random();
-        int pick = random.nextInt(6) + 1;
-        System.out.print("CPU selected: ");
-        
-        // TODO: Instantiate specific classes for CPU
-        switch (pick) {
-            case 1: System.out.println("Heihachi Mishima"); break;
-            case 2: System.out.println("Devil Jin"); break;
-            case 3: System.out.println("Johnny Cage"); break;
-            case 4: System.out.println("Reptile"); break;
-            case 5: System.out.println("Scorpion"); break;
-            case 6: System.out.println("Liu Kang"); break;
-        }
-        
-        // Null for now until classes are available
-        /* 
-        if (pick == 1) return new HeihachiMishima();
-        */
-        return null;
+        // We create a list of available fighters to choose from.
+        // As you create more fighter classes, add them to this array.
+        BaseCharacter[] availableFighters = {
+            new HeihachiMisihima(),
+            new DevilJin(),
+            new JohnnyCage()
+        };
+
+        int pick = random.nextInt(availableFighters.length);
+        BaseCharacter cpuCharacter = availableFighters[pick];
+
+        System.out.println("CPU selected: " + cpuCharacter.getName());
+        return cpuCharacter;
     }
 }
