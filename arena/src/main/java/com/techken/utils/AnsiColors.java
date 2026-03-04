@@ -14,6 +14,9 @@ public class AnsiColors {
     public static final String YELLOW      = "\u001B[33m";
     public static final String YELLOW_BRIGHT = "\u001B[93m";
 
+    // Green colors
+    public static final String GREEN       = "\u001B[32m";
+
     // White Colors
     public static final String WHITE       = "\u001B[97m";
     public static final String WHITE_DIM   = "\u001B[37m"; 

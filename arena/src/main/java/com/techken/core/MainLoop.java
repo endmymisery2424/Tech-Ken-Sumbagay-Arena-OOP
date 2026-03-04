@@ -1,6 +1,12 @@
 package com.techken.core;
 
 import com.techken.model.BaseCharacter;
+import com.techken.model.fighters.DevilJin;
+import com.techken.model.fighters.HeihachiMisihima;
+import com.techken.model.fighters.JohnnyCage;
+// import com.techken.model.fighters.Reptile;
+// import com.techken.model.fighters.Scorpion;
+// import com.techken.model.fighters.LiuKang;
 import com.techken.utils.AnsiColors;
 
 import java.util.Scanner;
@@ -121,9 +127,9 @@ private BaseCharacter selectCharacter() {
 
     // TODO: Diri e instantiate ang specific classes from Member 3 & 4 (Character classes) here
     switch (choice) {
-        case "1": return null; // return new HeihachiMishima();
-        case "2": return null; // return new DevilJin();
-        case "3": return null; // return new JohnnyCage();
+        case "1": return new HeihachiMisihima();
+        case "2": return new DevilJin();
+        case "3": return new JohnnyCage();
         case "4": return null; // return new Reptile();
         case "5": return null; // return new Scorpion();
         case "6": return null; // return new LiuKang();
@@ -137,23 +143,20 @@ private BaseCharacter selectCharacter() {
 
     private BaseCharacter selectCpuCharacter() {
         Random random = new Random();
-        int pick = random.nextInt(6) + 1;
+        // Only pick from the 3 implemented characters for now
+        int pick = random.nextInt(3) + 1;
         System.out.print("CPU selected: ");
-        
-        // TODO: Instantiate specific classes for CPU
+
         switch (pick) {
-            case 1: System.out.println("Heihachi Mishima"); break;
-            case 2: System.out.println("Devil Jin"); break;
-            case 3: System.out.println("Johnny Cage"); break;
-            case 4: System.out.println("Reptile"); break;
-            case 5: System.out.println("Scorpion"); break;
-            case 6: System.out.println("Liu Kang"); break;
+            case 1:
+                System.out.println("Heihachi Mishima");
+                return new HeihachiMisihima();
+            case 2:
+                System.out.println("Devil Jin");
+                return new DevilJin();
+            default: // case 3
+                System.out.println("Johnny Cage");
+                return new JohnnyCage();
         }
-        
-        // Null for now until classes are available
-        /* 
-        if (pick == 1) return new HeihachiMishima();
-        */
-        return null;
     }
 }

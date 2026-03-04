@@ -10,8 +10,8 @@ public class JohnnyCage extends BaseCharacter {
         super("Johnny Cage", 100, 50, 15);
 
         // Skillset: Fast AttackActions
-        //this.skills[0] = new AttackAction("Shadow Kick", 20);
-        //this.skills[1] = new AttackAction("Nut Punch", 25);
-        //this.skills[2] = new AttackAction("Forceball", 18);
+        this.skills[0] = new AttackAction("Shadow Kick", 20);
+        this.skills[1] = new AttackAction("Nut Punch", 25);
+        this.skills[2] = new AttackAction("Forceball", 18);
     }
 }
