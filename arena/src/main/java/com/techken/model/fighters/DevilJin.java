@@ -10,7 +10,6 @@ public class DevilJin extends BaseCharacter {
     private boolean isBerserk = false;
 
     public DevilJin() {
-        
         super("Devil Jin", 120, 20, 15);
 
         this.skills[0] = new AttackAction("Laser Scraper", 25);
