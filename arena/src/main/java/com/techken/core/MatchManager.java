@@ -77,7 +77,7 @@ public class MatchManager {
                // Shows skill options
             System.out.println("Choose your skill:");
             for (int i = 0; i < attacker.getSkills().length; i++) {
-                System.out.println("  [" + (i + 1) + "] " + attacker.getSkills()[i].getName());
+                System.out.println("  [" + (i + 1) + "] " + attacker.getSkills()[i].getSkillName());
             }
             System.out.print(AnsiColors.YELLOW_BRIGHT + ">> Select move (1-3): " + AnsiColors.RESET);
             int skillIndex = inputHandler.getIntInput(1, 3) - 1;
@@ -86,7 +86,7 @@ public class MatchManager {
             chosenSkill = aiLogic.selectSkill(attacker);
         }
 
-        System.out.println(AnsiColors.BOLD + attacker.getName() + " uses " + chosenSkill.getName() + "!" + AnsiColors.RESET);
+        System.out.println(AnsiColors.BOLD + attacker.getName() + " uses " + chosenSkill.getSkillName() + "!" + AnsiColors.RESET);
 
         // Handle attack or lifesteal skill
         if (chosenSkill instanceof AttackAction || chosenSkill instanceof HealthStealDamageAction) {

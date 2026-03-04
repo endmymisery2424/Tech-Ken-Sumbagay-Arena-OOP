@@ -1,5 +1,7 @@
 package com.techken.skills.actions;
+
 import com.techken.skills.BaseSkill;
+
 public class GuardAction extends BaseSkill {
     private int defenseBoost;
 
