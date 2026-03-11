@@ -22,6 +22,7 @@ public class MatchManager {
         this.combatMath = new CombatMath();
     }
 
+
     // Main match loop mo run until someone's HP hits 0
     public void startMatch(BaseCharacter player1, BaseCharacter player2) {
         if (player1 == null || player2 == null) {
@@ -69,7 +70,8 @@ public class MatchManager {
 
     // Handles one character's turn player gets a menu, CPU uses AI or katong random generated chooser
     private void processTurn(BaseCharacter attacker, BaseCharacter defender, boolean isPlayer) {
-        System.out.println(AnsiColors.BOLD + "\nIt's " + attacker.getName() + "'s turn." + AnsiColors.RESET);
+        String turnOwner = isPlayer ? "(Player)" : "(CPU)";
+        System.out.println(AnsiColors.BOLD + "\nIt's " + attacker.getName() + "'s turn. " + turnOwner + AnsiColors.RESET);
         attacker.resetDefense();
 
         BaseSkill chosenSkill;
